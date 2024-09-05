@@ -52,6 +52,7 @@ class App {
   }
 
   scanProjects() {
+    throw new Error('999')
     this.scanPromise.cancel()
     this.scanPromise = createCancelablePromise((cancellationToken) => {
       return window.withProgress(
