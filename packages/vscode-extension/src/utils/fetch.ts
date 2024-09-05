@@ -25,6 +25,7 @@ const vscode = window.acquireVsCodeApi()
 
 export default async function fetch(url: string, init?: RequestInit) {
   url = settings.url + url
+  throw new Error('666')
   vscode.postMessage({ type: 'log', text: `${url} 666 ${init}` })
   url = url.replace('https://perfsee.comhttps//perfsee.com/', 'https://perfsee.com/')
   const res = await nodeFetch(url, init)
