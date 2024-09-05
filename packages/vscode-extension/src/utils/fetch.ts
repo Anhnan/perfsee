@@ -22,6 +22,7 @@ import Logger from './logger'
 
 export default async function fetch(url: string, init?: RequestInit) {
   url = settings.url + url
+  url = url.replace('https://perfsee.comhttps//perfsee.com/', 'https://perfsee.com/')
   const res = await nodeFetch(url, init)
   Logger.debug(`[fetch] ${init?.method ?? 'GET'} ${url} (${res.status}) ${res.statusText}`)
   return res
